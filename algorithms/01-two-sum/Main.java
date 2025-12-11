@@ -103,26 +103,15 @@ class Solution {
         // map structure should be key: Number, value: index, so we can search for the actual value as a complement
         map.put(nums[0], 0);
         // Calc loop
-        System.out.println(Arrays.toString(nums));
         for (int i = 1; i < nums.length; i++) {
-            System.out.println("Evaluating index:" + i);
             int complement = target - nums[i];
-            System.out.println("Searching for complement:" + complement);
-            System.out.println("Current Map content:" + map.toString());
             // if our map contains the complement; return the pair of numbers whose addition results in the target sum
             if (map.containsKey(complement)) {
-                System.out.println(
-                    "Complement found at index: " + map.get(complement)
-                );
                 int[] result = { map.get(complement), i };
-                System.out.println(
-                    "Resulting array: " + Arrays.toString(result)
-                );
                 return result;
             } else {
                 // add the last index to our hashmap
                 map.put(nums[i], i);
-                System.out.println("Complement not found, visiting next");
             }
         }
         return new int[] {};
