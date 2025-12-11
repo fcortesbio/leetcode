@@ -81,7 +81,17 @@ class Solution {
     }
 
     static int[] naiveApproach(int[] nums, int target) {
-        return nums;
+        for (int i = 0; i <= nums.length; i++) {
+            // check sums ; not use the same number more than once
+            for (int j = i + 1; j < nums.length; j++) {
+                int sum = nums[i] + nums[j];
+                if (sum == target) {
+                    int[] arr = { i, j };
+                    return arr;
+                }
+            }
+        }
+        return new int[] {};
     }
 
     static int[] hashmapApproach(int[] nums, int target) {
