@@ -81,7 +81,7 @@ class Solution {
     }
 
     static int[] naiveApproach(int[] nums, int target) {
-        for (int i = 0; i <= nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             // check sums ; not use the same number more than once
             for (int j = i + 1; j < nums.length; j++) {
                 int sum = nums[i] + nums[j];
