@@ -69,6 +69,22 @@ public class Main {
 class Solution {
 
     public int[] twoSum(int[] nums, int target) {
+        // input validation
+        // check if array is null
+        // check if array meets the constraint (length >= 2)
+        if (nums == null || nums.length < 2) {
+            throw new IllegalArgumentException(
+                "Input array must contain at least 2 numbers"
+            );
+        }
+        return naiveApproach(nums, target);
+    }
+
+    static int[] naiveApproach(int[] nums, int target) {
+        return nums;
+    }
+
+    static int[] hashmapApproach(int[] nums, int target) {
         return nums;
     }
 }
